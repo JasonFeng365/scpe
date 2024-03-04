@@ -1,0 +1,13 @@
+@font-face {
+	font-family: "jetbrainsMono";
+	src: url(resources/JetBrainsMono-Light.ttf);
+	font-display: swap;
+}
+
+body {
+	background: url(resources/spacebackground.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
