@@ -11,3 +11,15 @@ body {
 	background-position: center;
 	background-size: cover;
 }
+
+.box {
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.captionbox {
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	padding: 10px;
+}
