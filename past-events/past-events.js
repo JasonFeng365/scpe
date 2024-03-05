@@ -19,7 +19,8 @@ function makeCarouselButtons(carouselName, count) {
 }
 
 function makeCarouselImages(shortName, count, captions) {
-	let res = '<div class="carousel-item active"><img src="'+shortName+'/0.jpg" class="d-block" style="width:100%"><div class="carousel-caption"><div class="captionbox"><h3>'+captions[0]+'</h3></div></div></div>\n'
+	// let res = '<div class="carousel-item active"><img src="'+shortName+'/0.jpg" class="d-block" style="width:100%"><div class="carousel-caption"><div class="captionbox"><h3>'+captions[0]+'</h3></div></div></div>\n'
+	let res = '<div class="carousel-item active"><img src="'+shortName+'/0.jpg" class="d-block" style="width:100%"><div class="carousel-caption"></div></div>\n'
 	for (let i=1; i<count; i++) {
 		// let caption = null
 		// if (captions[i].length == 0) caption = ""
