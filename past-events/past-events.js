@@ -3,7 +3,7 @@ const events = []
 // 2023
 events.push({
 	title:"SCPE Fall 2023",
-	shortName:"2023",	// Subdir name and Vue id.		Vue 2023_0, 2023_1, ...
+	shortName:"2023",
 	length:7,
 	captions:["Awards ceremony!", "Post-contest picture", "Pre-contest introductions", "Lunch", "Breakfast", "Breakfast", ""],
 	overallDesc:["Stuff"]
@@ -21,9 +21,10 @@ function makeCarouselButtons(carouselName, count) {
 function makeCarouselImages(shortName, count, captions) {
 	let res = '<div class="carousel-item active"><img src="'+shortName+'/0.jpg" class="d-block" style="width:100%"><div class="carousel-caption"><div class="captionbox"><h3>'+captions[0]+'</h3></div></div></div>\n'
 	for (let i=1; i<count; i++) {
-		let caption = null
-		if (captions[i].length == 0) caption = ""
-		else caption = '<div class="captionbox"><h3>'+captions[i]+'</h3></div>'
+		// let caption = null
+		// if (captions[i].length == 0) caption = ""
+		// else caption = '<div class="captionbox"><h3>'+captions[i]+'</h3></div>'
+		let caption = ""
 		res += '<div class="carousel-item"><img src="'+shortName+'/'+i+'.jpg" class="d-block" style="width:100%"><div class="carousel-caption">'+caption+'</div></div>\n'
 	}
 	return res
