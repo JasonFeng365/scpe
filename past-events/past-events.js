@@ -61,5 +61,7 @@ new Vue({
 	},
 	mounted: function() {
 		this.html = makeHTML(events[0], true)
+		for (let i=1; i<events.length; i++)
+			this.html += makeHTML(events[i], false)
 	}
 });
