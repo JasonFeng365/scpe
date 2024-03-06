@@ -6,7 +6,8 @@ events.push({
 	shortName:"2023",
 	length:7,
 	captions:["Awards ceremony!", "Post-contest picture", "Pre-contest introductions", "Lunch", "Breakfast", "Breakfast", ""],
-	overallDesc:["Stuff"]
+	hackerrankURL:"https://www.hackerrank.com/contests/scpe-fall-2023/challenges",
+	overallDesc:"Our first ever SCPE was a huge success! Over 30 participants took part in the contest, with 64 total problem submissions. This was a huge opportunity for contestants to practice their critical thinking and problem-solving skills, along with being a huge opportunity for Sierra’s Coding Club officers to practice leadership.\nThe first SCPE was a bit of an experiment, with some aspects that went well and many aspects that we’ll continue to improve on in future contests.",
 })
 
 
@@ -53,7 +54,14 @@ function makeHTML(e, show) {
 	'<button class="carousel-control-prev" type="button" data-bs-target="#'+carouselName+'" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>\n'+
 	'<button class="carousel-control-next" type="button" data-bs-target="#'+carouselName+'" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>'+
 
-	"</div>\n</div>\n"
+	"</div>\n"+
+
+	"<br><p>\n"+
+	e.overallDesc.replaceAll("\n", "<br>")+
+	"\n</p>\n"+
+
+	'<h4><a href="'+e.hackerrankURL+'">Try '+e.title+' on HackerRank!</a></h4>'+
+	"</div>\n"
 }
 
 new Vue({
