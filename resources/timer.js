@@ -1,5 +1,5 @@
 // Daylight savings active during SCPE Spring 2024
-const contestTime = new Date("2024-04-06T10:00:00.000-07:00")
+const contestTime = new Date("2024-04-06T09:30:00.000-07:00")
 
 
 new Vue({
