@@ -6,7 +6,7 @@ new Vue({
 	el: '#timer',
 	data: {
 		contestTime:[],
-		registrationActive:true,
+		registrationActive:2,
 		timerOutput:"",
 		interval:null,
 		seconds:9999
@@ -21,13 +21,13 @@ new Vue({
 	},
 	methods: {
 		setSignupsEnded(){
-			this.timerOutput = "Signups have ended! See you at the contest!"
-			this.registrationActive = false
-			clearInterval(this.interval)
+			// this.timerOutput = "Signups have ended! See you at the contest!"
+			this.registrationActive = 1
+			// clearInterval(this.interval)
 		},
 		setContestEnded(){
-			this.timerOutput = "Thanks for joining SCPE Spring 2024! Check back for the next SCPE!"
-			this.registrationActive = false
+			// this.timerOutput = "Thanks for joining SCPE Spring 2024! Check back for the next SCPE!"
+			this.registrationActive = 0
 			clearInterval(this.interval)
 		},
 		countDownTimer() {
@@ -52,16 +52,20 @@ new Vue({
 				this.setContestEnded()
 				return false
 			}
-			if ((signupsEnded - curTime) < 0) {
-				this.setSignupsEnded()
-				return false
-			}
+			// if ((signupsEnded - curTime) < 0) {
+			// 	this.setSignupsEnded()
+			// 	return false
+			// }
 
 			let seconds = this.seconds%60
 			let minutes = Math.floor(this.seconds/60)%60
 			let hours = Math.floor(this.seconds/3600)%24
 			let days = Math.floor(this.seconds/86400)
 			this.timerOutput = this.parsePluralTime(days, "day") + ", " + this.addLeadingZero(hours) + ":" + this.addLeadingZero(minutes) + ":" + this.addLeadingZero(seconds)
+			if (curTime > signupsEnded) {
+				// this.timerOutput += "\n\n\nSignups have ended! See you at the contest!"
+				this.registrationActive = 1
+			}
 
 			return true
 		}
