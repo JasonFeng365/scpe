@@ -1,6 +1,6 @@
 // Daylight savings active during SCPE Spring 2024
 const contestTime = new Date("2024-04-06T09:30:00.000-07:00")
-
+const signupsEnded = new Date("2024-04-03T23:59:59.000-07:00")
 
 new Vue({
 	el: '#timer',
@@ -21,7 +21,12 @@ new Vue({
 	},
 	methods: {
 		setSignupsEnded(){
-			this.timerOutput = "Signups have ended! Check back for the next SCPE!"
+			this.timerOutput = "Signups have ended! See you at the contest!"
+			this.registrationActive = false
+			clearInterval(this.interval)
+		},
+		setContestEnded(){
+			this.timerOutput = "Thanks for joining SCPE Spring 2024! Check back for the next SCPE!"
 			this.registrationActive = false
 			clearInterval(this.interval)
 		},
@@ -43,7 +48,11 @@ new Vue({
 			let curTime = Date.now()
 			this.seconds = Math.floor((contestTime - curTime)/1000)
 
-			if (this.seconds < 0) {
+			if (contestTime - curTime < 0) {
+				this.setContestEnded()
+				return false
+			}
+			if ((signupsEnded - curTime) < 0) {
 				this.setSignupsEnded()
 				return false
 			}
@@ -53,7 +62,7 @@ new Vue({
 			let hours = Math.floor(this.seconds/3600)%24
 			let days = Math.floor(this.seconds/86400)
 			this.timerOutput = this.parsePluralTime(days, "day") + ", " + this.addLeadingZero(hours) + ":" + this.addLeadingZero(minutes) + ":" + this.addLeadingZero(seconds)
-			this.seconds--
+
 			return true
 		}
 	},
