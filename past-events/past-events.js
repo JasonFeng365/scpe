@@ -1,5 +1,15 @@
 const events = []
 
+// 2024
+events.push({
+	title:"SCPE Spring 2024",
+	shortName:"2024",
+	length:12,
+	captions:[],
+	hackerrankURL:"https://www.hackerrank.com/contests/scpe-spring-2024/challenges",
+	overallDesc:"SCPE Spring 2024, or as I like to call it: SCPE 2 was our first sponsored event, with coffee from Dunkin' Donuts for breakfast and sandwiches from Chick-Fil-A for lunch! Brave contestants took on ten more original problems. We made a few adjustments to the schedule, giving us room for a 2 hour and 30 minute contest. Prior to this contest, I set up Kirby Lore Bot to automatically send notifications for practice problem submissions, so I could help people with their submissions as soon as possible.\nWith a larger and more organized officer team, we were able to divide work between multiple team members. Everyone's teamwork was critical to getting our second contest running smoothly. Even with a minor mishap of donuts not showing up, SCPE 2 overall went great, and all contestants went home with new experience, free food, and a cool SCPE badge!\nWell done to our victors, representing Rocklin High School and Code Ninjas!",
+})
+
 // 2023
 events.push({
 	title:"SCPE Fall 2023",
@@ -9,6 +19,8 @@ events.push({
 	hackerrankURL:"https://www.hackerrank.com/contests/scpe-fall-2023/challenges",
 	overallDesc:"Our first ever SCPE was a huge success! Over 30 participants took part in the contest, with 64 total problem submissions. This was a huge opportunity for contestants to practice their critical thinking and problem-solving skills, along with being a huge opportunity for Sierra’s Coding Club officers to practice leadership.\nThe first SCPE was a bit of an experiment, with some aspects that went well and many aspects that we’ll continue to improve on in future contests.",
 })
+
+
 
 
 function makeCarouselButtons(carouselName, count) {
@@ -38,7 +50,7 @@ function makeHTML(e, show) {
 	'<div id="'+carouselName+'dropdown" class="collapse'+(show?" show":"")+'"><br>\n'+
 	'<h3>'+e.title+'</h3>\n'+
 	//Carousel
-	'<div id="scpe2023" class="carousel slide" data-bs-ride="carousel">'+
+	'<div id="'+carouselName+'" class="carousel slide" data-bs-ride="carousel">'+
 
 	//Indicators/dots
 	'<div class="carousel-indicators">\n'+
@@ -57,7 +69,7 @@ function makeHTML(e, show) {
 	"</div>\n"+
 
 	"<br><p>\n"+
-	e.overallDesc.replaceAll("\n", "<br>")+
+	e.overallDesc.replaceAll("\n", "<br><br>")+
 	"\n</p>\n"+
 
 	'<h4><a href="'+e.hackerrankURL+'">Try '+e.title+' on HackerRank!</a></h4>'+
