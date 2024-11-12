@@ -1,7 +1,25 @@
 // Daylight savings active during SCPE Spring 2024
-const contestTime = new Date("2024-04-06T09:30:00.000-07:00")
-const signupsEnded = new Date("2024-04-03T23:59:59.000-07:00")
+const contestTime = new Date("2024-04-06T09:30:00.000-07:00");
+const signupsEnded = new Date("2024-04-03T23:59:59.000-07:00");
 
+// Formal text for contest time
+const contestTimeString = "April 6, 2024, 9:30AM";
+
+// What the website displays when:
+// 0: After contestTime timestamp
+// 1: After signupsEnded timestamp
+// 2: Default
+const splashTexts = [
+	"Thanks for joining SCPE Spring 2024! Check back for the next SCPE!",
+	"Signups have ended! See you at the contest!",
+	"Register using the link below!"
+];
+
+// Link to actual contest
+const contestLink = "https://www.hackerrank.com/scpe-spring-2024";
+
+// Link to signup form
+const registrationLink = "https://forms.gle/DWxcM4bUyhs7qCW1A";
 new Vue({
 	el: '#timer',
 	data: {
@@ -9,24 +27,15 @@ new Vue({
 		registrationActive:2,
 		timerOutput:"",
 		interval:null,
-		seconds:9999
-	},
-	computed: {
-		lowest(){
-			return this.index==0
-		},
-		highest(){
-			return this.index==this.mazes.length-1
-		},
+		seconds:9999,
+		splashTexts:splashTexts,
+		contestTimeString:contestTimeString,
 	},
 	methods: {
 		setSignupsEnded(){
-			// this.timerOutput = "Signups have ended! See you at the contest!"
 			this.registrationActive = 1
-			// clearInterval(this.interval)
 		},
 		setContestEnded(){
-			// this.timerOutput = "Thanks for joining SCPE Spring 2024! Check back for the next SCPE!"
 			this.registrationActive = 0
 			clearInterval(this.interval)
 		},
@@ -43,8 +52,6 @@ new Vue({
 			return "0"+time
 		},
 		updateTimer() {
-			// Days, hours, minutes, seconds
-			
 			let curTime = Date.now()
 			this.seconds = Math.floor((contestTime - curTime)/1000)
 
@@ -52,18 +59,13 @@ new Vue({
 				this.setContestEnded()
 				return false
 			}
-			// if ((signupsEnded - curTime) < 0) {
-			// 	this.setSignupsEnded()
-			// 	return false
-			// }
-
 			let seconds = this.seconds%60
 			let minutes = Math.floor(this.seconds/60)%60
 			let hours = Math.floor(this.seconds/3600)%24
 			let days = Math.floor(this.seconds/86400)
 			this.timerOutput = this.parsePluralTime(days, "day") + ", " + this.addLeadingZero(hours) + ":" + this.addLeadingZero(minutes) + ":" + this.addLeadingZero(seconds)
+			
 			if (curTime > signupsEnded) {
-				// this.timerOutput += "\n\n\nSignups have ended! See you at the contest!"
 				this.registrationActive = 1
 			}
 
@@ -72,5 +74,8 @@ new Vue({
 	},
 	mounted: function() {
 		this.interval = this.countDownTimer()
+
+		this.$refs.contestLink.setAttribute("href", contestLink);
+		this.$refs.registrationLink.setAttribute("href", registrationLink);
 	}
 });

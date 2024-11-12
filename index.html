@@ -58,15 +58,17 @@
 	<h1><b>SIERRA COMPETITIVE PROGRAMMING EXHIBITION</b></h1>
 	<h3>Sierra College Computer Science Club</h3>
 	<br>
-	<h4>April 6, 2024, 9:30AM</h4>
+	<h4>{{contestTimeString}}</h4>
 
 	<p v-if="registrationActive > 0">{{timerOutput}}</p>
-	<p v-if="registrationActive == 0">Thanks for joining SCPE Spring 2024! Check back for the next SCPE!</p>
-	<p v-if="registrationActive == 1">Signups have ended! See you at the contest!</p>
-	<a v-if="registrationActive == 2" href="register" class="btn btn-success text-light">Register</a><br><br>
+
+
+	<p>{{splashTexts[registrationActive]}}</p>
 	
-	<h5><a href="https://www.hackerrank.com/scpe-spring-2024"><font color="white"> Contest link on HackerRank!</font></a></h5><br>
-	<h5><a href="https://forms.gle/DWxcM4bUyhs7qCW1A"><font color="white">Register for the contest!</font></a></h5>
+	<br><br>
+	
+	<h5><a ref="contestLink"><font color="white"> Contest link on HackerRank!</font></a></h5><br>
+	<h5><a v-if="registrationActive == 2" ref="registrationLink"><font color="white">Register for the contest!</font></a></h5>
 </div>
 
 
