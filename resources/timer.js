@@ -17,10 +17,10 @@ const splashTexts = [
 	"Register using the link below!"
 ];
 
-// Link to actual contest
-const contestLink = "www.hackerrank.com/pre-scpe-fall-24";
+// Link to actual contest: make sure to put the "https://"
+const contestLink = "https://www.hackerrank.com/pre-scpe-fall-24";
 
-// Link to signup form
+// Link to signup form: make sure to put the "https://"
 const registrationLink = "https://docs.google.com/forms/d/e/1FAIpQLSdgIgPKVtOytGkAMh3CjHut034x7YSQhKQDwBC4BasKL1AsqA/viewform";
 new Vue({
 	el: '#timer',
