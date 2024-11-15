@@ -1,6 +1,8 @@
-// Daylight savings active during SCPE Spring 2024
-const contestTime = new Date("2024-11-23T11:00:00.000-07:00");
-const signupsEnded = new Date("2024-11-22T23:59:59.000-07:00");
+// Make sure to set the timezone!
+// "-07:00" for daylight savings (March - November)
+// "-08:00" for no daylight savings (Nov, Dec, Jan, Feb, Mar)
+const contestTime = new Date("2024-11-23T11:00:00.000-08:00");
+const signupsEnded = new Date("2024-11-22T23:59:59.000-08:00");
 
 // Formal text for contest time
 const contestTimeString = "November 23, 2024, 11:00AM";
