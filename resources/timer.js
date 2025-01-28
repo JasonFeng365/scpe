@@ -1,27 +1,27 @@
 // Make sure to set the timezone!
 // "-07:00" for daylight savings (March - November)
 // "-08:00" for no daylight savings (Nov, Dec, Jan, Feb, Mar)
-const contestTime = new Date("2024-11-23T11:00:00.000-08:00");
-const signupsEnded = new Date("2024-11-22T23:59:59.000-08:00");
+const contestTime = new Date("2025-04-26T09:30:00.000-07:00");
+const signupsEnded = new Date("2025-04-23T23:59:59.000-07:00");
 
 // Formal text for contest time
-const contestTimeString = "November 23, 2024, 11:00AM";
+const contestTimeString = "April 26, 2025, 9:30AM";
 
 // What the website displays when:
 // 0: After contestTime timestamp
 // 1: After signupsEnded timestamp
 // 2: Default
 const splashTexts = [
-	"Thanks for joining SCPE Fall 2024! Check back for the next SCPE!",
+	"Thanks for joining SCPE Spring 2025! Check back for the next SCPE!",
 	"Signups have ended! See you at the contest!",
 	"Register using the link below!"
 ];
 
 // Link to actual contest: make sure to put the "https://"
-const contestLink = "https://www.hackerrank.com/pre-scpe-fall-24";
+const contestLink = "https://www.hackerrank.com/scpe-spring-2025";
 
 // Link to signup form: make sure to put the "https://"
-const registrationLink = "https://docs.google.com/forms/d/e/1FAIpQLSdgIgPKVtOytGkAMh3CjHut034x7YSQhKQDwBC4BasKL1AsqA/viewform";
+const registrationLink = "https://docs.google.com/forms/d/e/1FAIpQLSct-OP7bhTZZJuFeMd0SBku19mPey89b2azSybGEvnopcHPtQ/viewform";
 new Vue({
 	el: '#timer',
 	data: {
