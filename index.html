@@ -64,11 +64,15 @@
 
 
 	<p>{{splashTexts[registrationActive]}}</p>
+
+	<h2 class="red-blue-shadow">
+		{{seatsRemaining}}
+	</h2>
 	
 	<br><br>
 	
-	<h5><a ref="contestLink"><font color="white"> Contest link on HackerRank!</font></a></h5><br>
-	<h5><a v-if="registrationActive == 2" ref="registrationLink"><font color="white">Register for the contest!</font></a></h5>
+	<h5><a v-if="registrationActive == 2" ref="registrationLink"><font color="white">Register for the contest!</font></a></h5><br>
+	<h5><a ref="contestLink"><font color="white"> Contest link on HackerRank!</font></a></h5>
 </div>
 
 

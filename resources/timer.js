@@ -32,6 +32,12 @@ new Vue({
 		seconds:9999,
 		splashTexts:splashTexts,
 		contestTimeString:contestTimeString,
+
+
+		endpoint:"https://immortal-hot-cat.ngrok-free.app/api/contests/88912342/signups/",
+		registered:0,
+		capacity:60,
+		seatsRemaining:"",
 	},
 	methods: {
 		setSignupsEnded(){
@@ -72,9 +78,36 @@ new Vue({
 			}
 
 			return true
-		}
+		},
+
+
+
+		sendRequest() {
+			fetch(this.endpoint, {
+				method: "GET",
+				headers: new Headers({
+					"ngrok-skip-browser-warning": true
+				})
+			})
+			.then(success => {
+				success.json().then(json => {
+					this.registered = json.responseCount
+					console.log(json)
+
+					this.setText()
+				})
+			})
+
+		},
+		setText() {
+			this.seatsRemaining = Math.max(0, this.capacity - this.registered)
+			this.seatsRemaining += " spots left!"
+			console.log(this.registered)
+		},
 	},
 	mounted: function() {
+		this.sendRequest()
+
 		this.interval = this.countDownTimer()
 
 		this.$refs.contestLink.setAttribute("href", contestLink);

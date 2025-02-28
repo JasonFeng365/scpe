@@ -33,4 +33,12 @@ body::after {
 	bottom: 0;
 	background-size: cover;
 	background-repeat: no-repeat;
-  }
+}
+
+.red-blue-shadow {
+	text-shadow: 1px 0px .3em #8040FF, -1px -0px .3em #FF0000, 0 0 0.9em #0000FF;
+}
+
+.purple-shadow {
+	text-shadow: 1px 0px .3em #8040FF, -1px -0px .3em #8040FF, 0 0 0.9em #8040FF;
+}
