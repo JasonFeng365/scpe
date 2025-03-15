@@ -91,8 +91,14 @@ new Vue({
 			})
 			.then(success => {
 				success.json().then(json => {
-					this.registered = json.responseCount
+					this.registered = 0
 					console.log(json)
+					console.log(json.teamSizeMap[1])
+					console.log(json.teamSizeMap[2])
+					console.log(json.teamSizeMap[3])
+
+					for (let i=1; i<4; i++) 
+						this.registered += json.teamSizeMap[i] * i
 
 					this.setText()
 				})
