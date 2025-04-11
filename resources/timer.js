@@ -34,7 +34,7 @@ new Vue({
 		contestTimeString:contestTimeString,
 
 
-		endpoint:"https://immortal-hot-cat.ngrok-free.app/api/contests/88912342/signups/",
+		endpoint:"https://canis.jasonfeng365.top/api/contests/88912342/signups/",
 		registered:0,
 		capacity:60,
 		seatsRemaining:"",
