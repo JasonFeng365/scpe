@@ -42,3 +42,14 @@ body::after {
 .purple-shadow {
 	text-shadow: 1px 0px .3em #8040FF, -1px -0px .3em #8040FF, 0 0 0.9em #8040FF;
 }
+
+a {
+	color: #ffaa40;
+	text-decoration:none;
+	transition: .2s;
+}
+
+a:hover {
+	color: #ff6640;
+	transition: .2s;
+}
