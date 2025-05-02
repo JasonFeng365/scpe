@@ -85,9 +85,6 @@ new Vue({
 		sendRequest() {
 			fetch(this.endpoint, {
 				method: "GET",
-				// headers: new Headers({
-				// 	"ngrok-skip-browser-warning": true
-				// })
 			})
 			.then(success => {
 				success.json().then(json => {
