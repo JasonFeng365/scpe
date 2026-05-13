@@ -6,6 +6,16 @@ function link(text, url) {
 
 // Spring 2025
 events.push({
+	title:"SCPE Spring 2026",
+	shortName:"s2026",
+	length:3,
+	captions:[],
+	hackerrankURL:"https://www.hackerrank.com/contests/scpe-spring-2026/challenges",
+	overallDesc:"With problem collected by president Ken Irving and officers, SCPE 2026 is a beginner-friendly contest for newcomers to the world of competitive programming! We welcomed champions of HPE CodeWars 2026, along with old veterans, to compete for fame and glory.",
+})
+
+// Spring 2025
+events.push({
 	title:"SCPE Spring 2025",
 	shortName:"s2025",
 	length:5,
